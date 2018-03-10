@@ -169,8 +169,8 @@ class Modmail(commands.Bot):
                'Modifying the channel topic will also break the system.'
         em.add_field(name='Commands', value=cmds)
         em.add_field(name='Warning', value=warn)
-        em.add_field(name='Github', value='https://github.com/verixx/modmail')
-        em.set_footer(text='Star the repository to unlock hidden features!')
+        em.add_field(name='Discord', value='https://discord.gg/hHXrtH7')
+        em.set_footer(text='Thank you - Thunder Development Team ')
 
         return em
 
