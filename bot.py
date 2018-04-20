@@ -114,11 +114,9 @@ class Modmail(commands.Bot):
     def guild_id(self):
         from_heroku = os.environ.get('GUILD_ID')
         return int(from_heroku) if from_heroku else GUILD_ID
-
     async def on_ready(self):
         '''Bot startup, sets uptime.'''
         self.guild = discord.utils.get(self.guilds, id=self.guild_id)
- 
         print(textwrap.dedent(f'''
         ---------------
         Client is ready!
@@ -131,7 +129,7 @@ class Modmail(commands.Bot):
         '''))
             await self.change_presence(game=discord.Game(name=DM me for help))
 
-    def overwrites(self, ctx, modrole=None):
+    def overwrites(self, ctx, modrole=Staff):
         '''Permision overwrites for the guild.'''
         overwrites = {
             ctx.guild.default_role: discord.PermissionOverwrite(read_messages=False)
