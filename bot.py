@@ -109,7 +109,7 @@ class Modmail(commands.Bot):
     async def on_connect(self):
         print('---------------')
         print('Modmail connected!')
-            await self.change_presence(game=discord.Game(name=DM me for help))
+            
     @property
     def guild_id(self):
         from_heroku = os.environ.get('GUILD_ID')
@@ -118,6 +118,7 @@ class Modmail(commands.Bot):
     async def on_ready(self):
         '''Bot startup, sets uptime.'''
         self.guild = discord.utils.get(self.guilds, id=self.guild_id)
+ 
         print(textwrap.dedent(f'''
         ---------------
         Client is ready!
@@ -128,6 +129,7 @@ class Modmail(commands.Bot):
         User ID: {self.user.id}
         ---------------
         '''))
+            await self.change_presence(game=discord.Game(name=DM me for help))
 
     def overwrites(self, ctx, modrole=None):
         '''Permision overwrites for the guild.'''
