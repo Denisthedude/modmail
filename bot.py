@@ -109,13 +109,7 @@ class Modmail(commands.Bot):
     async def on_connect(self):
         print('---------------')
         print('Modmail connected!')
-
-
             await self.change_presence(game=discord.Game(name=DM me for help))
-          
-
-
-
     @property
     def guild_id(self):
         from_heroku = os.environ.get('GUILD_ID')
@@ -128,7 +122,7 @@ class Modmail(commands.Bot):
         ---------------
         Client is ready!
         ---------------
-        Author: Kyb3r#7220
+        Author: Tor#1329
         ---------------
         Logged in as: {self.user}
         User ID: {self.user.id}
