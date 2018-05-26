@@ -110,11 +110,7 @@ class Modmail(commands.Bot):
         print('---------------')
         print('Modmail connected!')
         status = os.getenv('STATUS')
-        if status:   
-            await self.change_presence(game=discord.Game(name=status))
-            print(f'Setting Status to {status}')
-        else:
-            print('No status set.')
+        await self.change_presence(game=discord.Game(name="DM me with any questions or conerns."))
 
     @property
     def guild_id(self):
