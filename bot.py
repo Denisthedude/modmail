@@ -107,15 +107,13 @@ class Modmail(commands.Bot):
             raise e
 
     async def on_connect(self):
-        print('---------------')
-        print('Modmail connected!')
+        print('---------------')        print('Modmail connected!')
         status = os.getenv('STATUS')
         await self.change_presence(game=discord.Game(name="DM me with any questions or conerns."))
 
     @property
     def guild_id(self):
-        from_heroku = os.environ.get('GUILD_ID')
-        return int(from_heroku) if from_heroku else GUILD_ID
+        from_heroku = os.environ.get('GUILD_ID')        return int(from_heroku) if from_heroku else GUILD_ID
 
     async def on_ready(self):
         '''Bot startup, sets uptime.'''
@@ -125,8 +123,7 @@ class Modmail(commands.Bot):
         Client is ready!
         ---------------
         Author: Kyb3r#7220
-        ---------------
-        Logged in as: {self.user}
+        ---------------        Logged in as: {self.user}
         User ID: {self.user.id}
         ---------------
         '''))
@@ -149,7 +146,7 @@ class Modmail(commands.Bot):
         em = discord.Embed(color=0x00FFFF)
         em.set_author(name='Mod Mail - Help', icon_url=self.user.avatar_url)
         em.description = 'This is a support bot used to answer members when they request support. ' \
-                         'Made by Thunder Development Team and improved by the suggestions of others. This bot ' \
+                         'Made by Tor Studios Team and improved by the suggestions of others. This bot ' \
                          'saves no data and utilises channel topics for storage and syncing.' 
                  
 
