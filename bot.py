@@ -50,6 +50,7 @@ class Modmail(commands.Bot):
 
     def _add_commands(self):
         '''Adds commands automatically'''
+
         for attr in dir(self):
             cmd = getattr(self, attr)
             if isinstance(cmd, commands.Command):
@@ -60,8 +61,7 @@ class Modmail(commands.Bot):
         '''Returns your token wherever it is'''
         try:
             with open('config.json') as f:
-                config = json.load(f)
-                if config.get('TOKEN') == "your_token_here":
+                config = json.load(f)                if config.get('TOKEN') == "your_token_here":
                     if not os.environ.get('TOKEN'):
                         self.run_wizard()
                 else:
@@ -115,7 +115,8 @@ class Modmail(commands.Bot):
     def guild_id(self):
         from_heroku = os.environ.get('GUILD_ID')        return int(from_heroku) if from_heroku else GUILD_ID
 
-    async def on_ready(self):        '''Bot startup, sets uptime.'''
+    async def on_ready(self):
+        '''Bot startup, sets uptime.''
         self.guild = discord.utils.get(self.guilds, id=self.guild_id)
         print(textwrap.dedent(f'''
         ---------------
