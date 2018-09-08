@@ -115,8 +115,7 @@ class Modmail(commands.Bot):
     def guild_id(self):
         from_heroku = os.environ.get('GUILD_ID')        return int(from_heroku) if from_heroku else GUILD_ID
 
-    async def on_ready(self):
-        '''Bot startup, sets uptime.'''
+    async def on_ready(self):        '''Bot startup, sets uptime.'''
         self.guild = discord.utils.get(self.guilds, id=self.guild_id)
         print(textwrap.dedent(f'''
         ---------------
@@ -163,7 +162,7 @@ class Modmail(commands.Bot):
         em.add_field(name='Commands', value=cmds)
         em.add_field(name='Warning', value=warn)
         em.add_field(name='Discord', value='https://discord.gg/hHXrtH7')
-        em.set_footer(text='Thank you - Thunder Development Team ')
+        em.set_footer(text='Thank you - Tor Studios Team ')
 
         return em
 
